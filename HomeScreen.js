@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, TextInput, Button, Text, StyleSheet } from 'react-native';
+import { View, TextInput, Button, Text, StyleSheet, Image } from 'react-native';
 
 const HomeScreen = ({ navigation }) => {
   const handleSignUp = () => {
@@ -8,6 +8,10 @@ const HomeScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
+      <Image
+        source={require('./assets/login.gif')} // Adjust the path to your GIF image
+        style={styles.gif}
+      />
       <TextInput
         style={styles.input}
         placeholder="Username"
@@ -62,6 +66,11 @@ const styles = StyleSheet.create({
   },
   button: {
     marginBottom: 15, // Add margin bottom to the buttons for spacing
+  },
+  gif: {
+    width: 200, // Adjust the width of the GIF image
+    height: 200, // Adjust the height of the GIF image
+    marginBottom: 20, // Add margin bottom to the GIF image for spacing
   },
 });
 

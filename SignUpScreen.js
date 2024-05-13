@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, TextInput, Button, Text, StyleSheet } from 'react-native';
+import { View, TextInput, Button, Text, StyleSheet, Image } from 'react-native';
 
 const SignUpScreen = ({ navigation }) => {
   const handleSignUp = () => {
@@ -8,6 +8,13 @@ const SignUpScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
+      {/* GIF image */}
+      <Image
+        source={require('./assets/login.gif')} // Adjust the path to your GIF image
+        style={styles.gif}
+      />
+
+      {/* Input fields */}
       <TextInput
         style={styles.input}
         placeholder="Username"
@@ -23,12 +30,13 @@ const SignUpScreen = ({ navigation }) => {
         secureTextEntry
       />
       
+      {/* Sign Up button */}
       <View style={styles.signupContainer}>
         <Button
           title="Sign Up"
           onPress={handleSignUp}
-          style={[styles.button, { width: '100%' }]} // Adjust width to 100%
-          color="black" // Change button color to black
+          style={[styles.button, { width: '100%' }]}
+          color="black"
         />
       </View>
     </View>
@@ -47,20 +55,27 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     padding: 10,
     borderWidth: 1,
-    borderColor: 'skyblue', // Set border color as sky blue
+    borderColor: 'skyblue',
     borderRadius: 5,
-    backgroundColor: 'skyblue', // Change background color to sky blue
+    backgroundColor: 'skyblue',
   },
   signupContainer: {
-    marginTop: 60, // Adjust margin top as needed
+    marginTop: 60,
     alignItems: 'left',
   },
-  signupText: {
-    marginBottom: 10, // Adjust margin bottom as needed
-    color: '#333',
-  },
   button: {
-    marginBottom: 35, // Add margin bottom to the buttons for spacing
+    marginBottom: 5,
   },
+  gif: {
+    width: 200,
+    height: 200,
+    marginBottom: 20,
+  },
+  wrapperButton: {
+    width: '100%',
+    height: 45,
+    borderRadius: 40,
+  }
 });
+
 export default SignUpScreen;
